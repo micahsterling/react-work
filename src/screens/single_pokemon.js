@@ -10,14 +10,14 @@ export const SinglePokemonScreen = (props) => {
         abilities: []
     });
 
-    const loadPokemon = async(url) => {
+    const loadPokemon = async (url) => {
         let data = await getPokemon(url);
         console.log("Data: ", data);
         setPokemon({
             ...pokemon,
             abilities: data.abilities
         });
-        console.log("POkemon: ", pokemon);
+        console.log("Pokemon: ", pokemon);
         console.log("Abilities: ", pokemon.abilities);
     }
 
@@ -27,10 +27,11 @@ export const SinglePokemonScreen = (props) => {
 
     return (
         <Components.PageContainer>
-            <Components.NavigationComponent color="blue" title="Pokemon Name" />
+            <Components.NavigationComponent color="blue" title="pokemon name " />
             {pokemon.abilities.map((ability) => {
                 return (
                     <div>
+                        <p>Name:{pokemon.name}</p>
                         <p>{ability.ability.name}</p>
                         <p>{ability.ability.url}</p>
                         <p>Is Hidden: {ability.is_hidden}</p>
@@ -41,3 +42,4 @@ export const SinglePokemonScreen = (props) => {
         </Components.PageContainer>
     );
 }
+

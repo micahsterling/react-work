@@ -3,11 +3,11 @@ import * as Components from '../components';
 import { useHistory } from 'react-router';
 import { getAllPokemon } from '../utils';
 export const PokemonScreen = () => {
-    
+
     const history = useHistory();
     const [pokemonList, setPokemonList] = useState([]);
 
-    const loadPokemon = async() => {
+    const loadPokemon = async () => {
         let data = await getAllPokemon();
         setPokemonList(data.results);
     }
@@ -16,35 +16,31 @@ export const PokemonScreen = () => {
         loadPokemon();
     }, []);
 
-    const numbers = [5, 5, 3, 5, 3, 5];
-
     return (
         <Components.PageContainer>
-            <Components.NavigationComponent color="red" title="Pokedex" />
+            <Components.NavigationComponent color="red" title="Pokedex" image="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-1701527825731v7bl3.png" />
+
             <Components.PokemonGrid>
-            {pokemonList.map((pokemon, index) => {
-              return (
-            		<Components.PokemonCard onClick={(e) => {
-						e.preventDefault();
-						history.push('/pokemon', {
-							url: pokemon.url
-						});
-					}}>
-						<p>{pokemon.name}</p>
-                	</Components.PokemonCard>
-              );
-            })}
-            </Components.PokemonGrid>    
+                {pokemonList.map((pokemon, index) => {
+                    return (
+                        <Components.PokemonCard onClick={(e) => {
+                            e.preventDefault();
+                            history.push('/pokemon', {
+                                url: pokemon.url
+                            });
+                        }}>
+                            <div>
+                                <p>{pokemon.name}</p>
+                                <p>{pokemon.count}</p>
+                            </div>
+                        </Components.PokemonCard>
+                    );
+                })}
+            </Components.PokemonGrid>
             {/* {numbers.map((num, index) => {
                 return <p>{num}</p>;
             })} */}
-        </Components.PageContainer>
+        </Components.PageContainer >
     );
 }
 
-
-            
-{/* <button onClick={(e) => {
-    e.preventDefault();
-    history.push('/pokemon');
-}}>Pokemon!</button> */}

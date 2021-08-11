@@ -7,7 +7,8 @@ export const SinglePokemonScreen = (props) => {
 
     const history = useHistory();
     const [pokemon, setPokemon] = useState({
-        abilities: []
+        abilities: [],
+        name: "",
     });
 
     const loadPokemon = async (url) => {
@@ -15,10 +16,12 @@ export const SinglePokemonScreen = (props) => {
         console.log("Data: ", data);
         setPokemon({
             ...pokemon,
-            abilities: data.abilities
+            abilities: data.abilities,
+            name: data.name
         });
         console.log("Pokemon: ", pokemon);
         console.log("Abilities: ", pokemon.abilities);
+        console.log("Name: ", pokemon.name);
     }
 
     useEffect(() => {
@@ -27,11 +30,12 @@ export const SinglePokemonScreen = (props) => {
 
     return (
         <Components.PageContainer>
-            <Components.NavigationComponent color="blue" title="pokemon name " />
+            <Components.NavigationComponent color="blue" title={pokemon.name} />
+            <p>Name: {pokemon.name}</p>
+
             {pokemon.abilities.map((ability) => {
                 return (
                     <div>
-                        <p>Name:{pokemon.name}</p>
                         <p>{ability.ability.name}</p>
                         <p>{ability.ability.url}</p>
                         <p>Is Hidden: {ability.is_hidden}</p>

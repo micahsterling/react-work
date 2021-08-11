@@ -32,6 +32,6 @@ export const NavigationBarHeader = styled.h1`
 
 export const Image = styled.img`
     height: 40px;
-    margin-left: -6%;
+    margin-left: -5%;
 
 `;

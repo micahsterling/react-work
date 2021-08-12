@@ -9,6 +9,8 @@ export const SinglePokemonScreen = (props) => {
     const [pokemon, setPokemon] = useState({
         abilities: [],
         name: "",
+        number: "",
+        type: [],
     });
 
     const loadPokemon = async (url) => {
@@ -17,11 +19,13 @@ export const SinglePokemonScreen = (props) => {
         setPokemon({
             ...pokemon,
             abilities: data.abilities,
-            name: data.name
+            name: data.name,
+            number: data.id,
         });
         console.log("Pokemon: ", pokemon);
         console.log("Abilities: ", pokemon.abilities);
         console.log("Name: ", pokemon.name);
+        console.log("Number: ", pokemon.number);
     }
 
     useEffect(() => {
@@ -32,6 +36,7 @@ export const SinglePokemonScreen = (props) => {
         <Components.PageContainer>
             <Components.NavigationComponent color="blue" title={pokemon.name} />
             <p>Name: {pokemon.name}</p>
+            <p>Number: {pokemon.id}</p>
 
             {pokemon.abilities.map((ability) => {
                 return (

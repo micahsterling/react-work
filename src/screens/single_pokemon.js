@@ -10,7 +10,7 @@ export const SinglePokemonScreen = (props) => {
         abilities: [],
         name: "",
         number: "",
-        type: [],
+        types: [],
     });
 
     const loadPokemon = async (url) => {
@@ -21,11 +21,13 @@ export const SinglePokemonScreen = (props) => {
             abilities: data.abilities,
             name: data.name,
             number: data.id,
+            types: data.types,
         });
         console.log("Pokemon: ", pokemon);
         console.log("Abilities: ", pokemon.abilities);
         console.log("Name: ", pokemon.name);
         console.log("Number: ", pokemon.number);
+        console.log("Types: ", pokemon.types);
     }
 
     useEffect(() => {
@@ -36,8 +38,17 @@ export const SinglePokemonScreen = (props) => {
         <Components.PageContainer>
             <Components.NavigationComponent color="blue" title={pokemon.name} />
             <p>Name: {pokemon.name}</p>
-            <p>Number: {pokemon.id}</p>
+            <p>Number: {pokemon.number}</p>
+            {/* <p>Type: {pokemon.types}</p> */}
 
+            {pokemon.types.map((type) => {
+                return (
+                    <div>
+                        <p>Type: {type.type.name}</p>
+
+                    </div>
+                )
+            })}
             {pokemon.abilities.map((ability) => {
                 return (
                     <div>

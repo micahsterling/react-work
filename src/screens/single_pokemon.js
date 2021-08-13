@@ -40,9 +40,10 @@ export const SinglePokemonScreen = (props) => {
     return (
         <Components.PageContainer>
             <Components.NavigationComponent color="blue" title={pokemon.name} />
+            <img src={`https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${pokemon.name}.png`} alt="not found" />
             <p>Name: {pokemon.name}</p>
             <p>Number: {pokemon.number}</p>
-            <p>Weight: {pokemon.weight}</p>
+            <p>Weight: {pokemon.weight}hg</p>
 
             {pokemon.types.map((type) => {
                 return (

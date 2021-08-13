@@ -11,6 +11,7 @@ export const SinglePokemonScreen = (props) => {
         name: "",
         number: "",
         types: [],
+        weight: "",
     });
 
     const loadPokemon = async (url) => {
@@ -22,12 +23,14 @@ export const SinglePokemonScreen = (props) => {
             name: data.name,
             number: data.id,
             types: data.types,
+            weight: data.weight
         });
         console.log("Pokemon: ", pokemon);
         console.log("Abilities: ", pokemon.abilities);
         console.log("Name: ", pokemon.name);
         console.log("Number: ", pokemon.number);
         console.log("Types: ", pokemon.types);
+        console.log("Weight: ", pokemon.weight);
     }
 
     useEffect(() => {
@@ -39,7 +42,7 @@ export const SinglePokemonScreen = (props) => {
             <Components.NavigationComponent color="blue" title={pokemon.name} />
             <p>Name: {pokemon.name}</p>
             <p>Number: {pokemon.number}</p>
-            {/* <p>Type: {pokemon.types}</p> */}
+            <p>Weight: {pokemon.weight}</p>
 
             {pokemon.types.map((type) => {
                 return (
@@ -49,13 +52,14 @@ export const SinglePokemonScreen = (props) => {
                     </div>
                 )
             })}
+            <p>Ability:</p>
             {pokemon.abilities.map((ability) => {
                 return (
                     <div>
                         <p>{ability.ability.name}</p>
-                        <p>{ability.ability.url}</p>
-                        <p>Is Hidden: {ability.is_hidden}</p>
-                        <p>Slot: {ability.slot}</p>
+                        {/* <p>{ability.ability.url}</p> */}
+                        {/* <p>Is Hidden: {ability.is_hidden}</p>
+                        <p>Slot: {ability.slot}</p> */}
                     </div>
                 )
             })}

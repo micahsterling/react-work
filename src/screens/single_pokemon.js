@@ -25,6 +25,7 @@ export const SinglePokemonScreen = (props) => {
             name: data.name,
             number: data.id,
             types: data.types,
+            height: data.height,
             weight: data.weight,
             moves: data.moves,
             stats: data.stats,
@@ -34,6 +35,7 @@ export const SinglePokemonScreen = (props) => {
         console.log("Name: ", pokemon.name);
         console.log("Number: ", pokemon.number);
         console.log("Types: ", pokemon.types);
+        console.log("Height: ", pokemon.height);
         console.log("Weight: ", pokemon.weight);
         console.log("Moves: ", pokemon.moves);
         console.log("Stats: ", pokemon.stats);
@@ -49,6 +51,7 @@ export const SinglePokemonScreen = (props) => {
             <img src={`https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${pokemon.name}.png`} alt="not found" />
             <p>Name: {pokemon.name}</p>
             <p>Number: {pokemon.number}</p>
+            <p>Height: {pokemon.height}</p>
             <p>Weight: {pokemon.weight}hg</p>
 
             {pokemon.types.map((type) => {

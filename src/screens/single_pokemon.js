@@ -12,6 +12,7 @@ export const SinglePokemonScreen = (props) => {
         number: "",
         types: [],
         weight: "",
+        moves: [],
     });
 
     const loadPokemon = async (url) => {
@@ -23,7 +24,8 @@ export const SinglePokemonScreen = (props) => {
             name: data.name,
             number: data.id,
             types: data.types,
-            weight: data.weight
+            weight: data.weight,
+            moves: data.moves
         });
         console.log("Pokemon: ", pokemon);
         console.log("Abilities: ", pokemon.abilities);
@@ -31,6 +33,7 @@ export const SinglePokemonScreen = (props) => {
         console.log("Number: ", pokemon.number);
         console.log("Types: ", pokemon.types);
         console.log("Weight: ", pokemon.weight);
+        console.log("Moves: ", pokemon.moves);
     }
 
     useEffect(() => {
@@ -61,6 +64,14 @@ export const SinglePokemonScreen = (props) => {
                         {/* <p>{ability.ability.url}</p> */}
                         {/* <p>Is Hidden: {ability.is_hidden}</p>
                         <p>Slot: {ability.slot}</p> */}
+                    </div>
+                )
+            })}
+            {pokemon.moves.map((move) => {
+                return (
+                    <div>
+                        <p>Move: {move.move.name}</p>
+
                     </div>
                 )
             })}

@@ -48,7 +48,7 @@ export const SinglePokemonScreen = (props) => {
     return (
         <Components.PageContainer>
             <Components.NavigationComponent color="blue" title={pokemon.name} />
-            <img src={`https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${pokemon.name}.png`} alt="not found" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="not found" />
             <p>Name: {pokemon.name}</p>
             <p>Number: {pokemon.number}</p>
             <p>Height: {pokemon.height}</p>

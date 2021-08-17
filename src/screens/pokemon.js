@@ -30,16 +30,15 @@ export const PokemonScreen = () => {
                             });
                         }}>
                             <div>
-                                <p>{pokemon.name}</p>
+                                <p>{pokemon.name}
+                                    <img src={`https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${pokemon.name}.png`} alt="not found" />
+                                </p>
                                 <p>{pokemon.count}</p>
                             </div>
                         </Components.PokemonCard>
                     );
                 })}
             </Components.PokemonGrid>
-            {/* {numbers.map((num, index) => {
-                return <p>{num}</p>;
-            })} */}
         </Components.PageContainer >
     );
 }

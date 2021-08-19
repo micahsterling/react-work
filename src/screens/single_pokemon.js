@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as Components from '../components';
 import { useHistory } from 'react-router';
 import { getPokemon } from '../utils';
+import { SinglePokemonCard } from '../components';
 
 export const SinglePokemonScreen = (props) => {
 
@@ -14,6 +15,7 @@ export const SinglePokemonScreen = (props) => {
         weight: "",
         moves: [],
         stats: [],
+        image: [],
     });
 
     const loadPokemon = async (url) => {
@@ -29,6 +31,7 @@ export const SinglePokemonScreen = (props) => {
             weight: data.weight,
             moves: data.moves,
             stats: data.stats,
+            image: data.spites,
         });
         console.log("Pokemon: ", pokemon);
         console.log("Abilities: ", pokemon.abilities);
@@ -39,6 +42,7 @@ export const SinglePokemonScreen = (props) => {
         console.log("Weight: ", pokemon.weight);
         console.log("Moves: ", pokemon.moves);
         console.log("Stats: ", pokemon.stats);
+        console.log("image: ", pokemon.image);
     }
 
     useEffect(() => {
@@ -48,7 +52,13 @@ export const SinglePokemonScreen = (props) => {
     return (
         <Components.PageContainer>
             <Components.NavigationComponent color="blue" title={pokemon.name} />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="not found" />
+
+            <Components.SinglePokemonCard pokemon={pokemon} color="green" image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png">
+
+
+            </Components.SinglePokemonCard>
+
+            {/* <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="not found" />
             <p>Name: {pokemon.name}</p>
             <p>Number: {pokemon.number}</p>
             <p>Height: {pokemon.height}</p>
@@ -67,30 +77,34 @@ export const SinglePokemonScreen = (props) => {
                 return (
                     <div>
                         <p>{ability.ability.name}</p>
-                        {/* <p>{ability.ability.url}</p> */}
-                        {/* <p>Is Hidden: {ability.is_hidden}</p>
-                        <p>Slot: {ability.slot}</p> */}
+                        <p>{ability.ability.url}</p>
+                        <p>Is Hidden: {ability.is_hidden}</p>
+                        <p>Slot: {ability.slot}</p>
                     </div>
                 )
             })}
-            {pokemon.stats.map((stat) => {
-                return (
-                    <div>
-                        <p>{stat.stat.name}: {stat.base_stat}</p>
-                        <p></p>
+            {
+                pokemon.stats.map((stat) => {
+                    return (
+                        <div>
+                            <p>{stat.stat.name}: {stat.base_stat}</p>
+                            <p></p>
 
-                    </div>
-                )
-            })}
-            {pokemon.moves.map((move) => {
-                return (
-                    <div>
-                        <p>Move: {move.move.name}</p>
+                        </div>
+                    )
+                })
+            }
+            {
+                pokemon.moves.map((move) => {
+                    return (
+                        <div>
+                            <p>Move: {move.move.name}</p>
 
-                    </div>
-                )
-            })}
-        </Components.PageContainer>
+                        </div>
+                    )
+                })
+            } */}
+        </Components.PageContainer >
     );
 }
 

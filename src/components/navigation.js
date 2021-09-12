@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NavigationComponent = ({ color, title, image }) => {
+export const NavigationComponent = ({ color, title, image, }) => {
     return (
         <NavigationBar color={color}>
             <Image src={image} />
@@ -27,7 +27,7 @@ export const NavigationBarHeader = styled.h1`
     text-align: center;
     color: white;
     font-size: 2rem;
-
+    text-transform: capitalize;
     `;
 
 export const Image = styled.img`

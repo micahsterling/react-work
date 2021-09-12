@@ -18,7 +18,7 @@ export const PokemonScreen = () => {
 
     return (
         <Components.PageContainer>
-            <Components.NavigationComponent color="red" title="Pokedex" image="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-1701527825731v7bl3.png" />
+            <Components.NavigationComponent home="home" color="red" title="Pokedex" image="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-1701527825731v7bl3.png" />
 
             <Components.PokemonGrid>
                 {pokemonList.map((pokemon, index) => {

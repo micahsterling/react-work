@@ -6,6 +6,7 @@ export const PokemonGrid = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
     
 `;
 
@@ -24,4 +25,5 @@ export const PokemonCard = styled.div`
     }
     width: 25%;
     height: 10vh;
+    text-transform: capitalize;
 `;

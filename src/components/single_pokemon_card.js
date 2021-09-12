@@ -42,6 +42,7 @@ const TopSection = styled.div`
 	position: relative;
 	height: 375px;
 	width: 100%;
+	
 `; // Side by Side
 
 const LeftSideSection = styled.div`

@@ -31,7 +31,8 @@ const SinglePokemonCardContainer = styled.div`
 
 export const Image = styled.img`
     height: 380px;
-
+		justify-content: center;
+		padding: 00px;
 `;
 
 const TopSection = styled.div`
@@ -48,10 +49,13 @@ const TopSection = styled.div`
 const LeftSideSection = styled.div`
 	position: relative;
 	width: 100%;
+	justify-content: center;
+	flex-direction: row;
 	`;
 const RightSideSection = styled.div`
 		position: relative;
 		top: 80px;
 		width: 100%;
+
 		
 	`;

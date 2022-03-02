@@ -8,19 +8,16 @@ export const SinglePokemonCard = ({ color, name, image, pokemon }) => {
 					<Image src={image} />
 				</LeftSideSection>
 				<RightSideSection>
-					<div>
-
-						<p>Backgournd Info</p>
+						<Title>Background Info</Title>
+					<DataCard>
 						<p>Name: {pokemon.name} </p>
 						<p>Number: {pokemon.number}</p>
 						<p>Height: {pokemon.height}</p>
 						<p>Weight: {pokemon.weight}hg</p>
-						<p>Weight: {pokemon.image}hg</p>
-					</div>
+					</DataCard>
 				</RightSideSection>
-
 			</TopSection>
-
+			<button>Home</button>
 		</SinglePokemonCardContainer>
 	);
 }
@@ -30,9 +27,9 @@ const SinglePokemonCardContainer = styled.div`
 `;
 
 export const Image = styled.img`
-    height: 380px;
-		justify-content: center;
-		padding: 00px;
+	height: 380px;
+	justify-content: center;
+	padding: 00px;
 `;
 
 const TopSection = styled.div`
@@ -51,11 +48,24 @@ const LeftSideSection = styled.div`
 	width: 100%;
 	justify-content: center;
 	flex-direction: row;
-	`;
-const RightSideSection = styled.div`
-		position: relative;
-		top: 80px;
-		width: 100%;
+`;
 
-		
-	`;
+const RightSideSection = styled.div`
+	position: relative;
+	top: 80px;
+	width: 100%;	
+	/* background-color: blue; */
+`;
+
+const Title = styled.h3`
+	color: white;
+
+`
+
+const DataCard = styled.div`
+	display: column;
+	margin-top: 10px;
+	text-transform: capitalize;
+	background-color: white;
+	width: 140px;
+`

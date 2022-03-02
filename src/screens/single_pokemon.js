@@ -53,8 +53,7 @@ export const SinglePokemonScreen = (props) => {
         <Components.PageContainer>
             <Components.NavigationComponent color="blue" title={pokemon.name} />
 
-            <Components.SinglePokemonCard pokemon={pokemon} color="gray" image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png">
-
+            <Components.SinglePokemonCard pokemon={pokemon} color="skyblue" image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png">
 
             </Components.SinglePokemonCard>
 
